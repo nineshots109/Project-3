@@ -50,6 +50,8 @@ For Sass:
 5. Creating database:
 $ python manage.py recreate_db
 
+If there is an error with python manage.py recreate_db, just try it again - it should work. If not, move on to next step!
+
 6. Run the app:
 $ source venv/bin/activate
 $ honcho start -e config.env -f Local
