@@ -1,0 +1,62 @@
+{% extends 'layouts/base.html' %}
+
+{% block content %}
+    <div class="ui text container">
+        <h1>About</h1>
+        <p>
+            Project #2 - Authentication Portal Project
+        </p>
+        <h2>Overview</h2>
+        <p>
+            This project is designed to give students practical experience in building web applications with Flask, a Python web framework. The core functionality of the application will be user authentication, which includes a signup and login page. Once authenticated, users will be directed to a personalized portal that displays their information. All user data and additional required information will be stored in a local SQLite database. Students are encouraged to explore and utilize any libraries they find suitable for accomplishing the project goals.
+        </p>
+        <h2>Objectives</h2>
+        <ul>
+            <li>Understand the basics of web application development using Flask.</li>
+            <li>Implement user authentication (signup and login) in a web application.</li>
+            <li>Store and retrieve user data from a SQLite database.</li>
+            <li>Develop a user-specific portal that is accessible post-authentication.</li>
+        </ul>
+        <h2>Requirements</h2>
+<div>
+    <h3>Environment Setup</h3>
+    <ul>
+        <li>Use Python 3.x for the project.</li>
+        <li>Install Flask and any other libraries you deem necessary.</li>
+        <li>Set up a local SQLite database for storing user information.</li>
+    </ul>
+
+    <h3>User Authentication</h3>
+    <ul>
+        <li>Implement a signup page where users can create a new account. The signup form should at least include username, email, and password fields.</li>
+        <li>Implement a login page where users can sign in using their credentials (username/email and password).</li>
+        <li>Implement session management to keep users logged in until they log out or the session expires.</li>
+    </ul>
+
+    <h3>Database Design</h3>
+    <ul>
+        <li>Design a SQLite database schema to store user information. At a minimum, the database should store usernames, passwords (hashed for security), emails, and any other information you require for the portal.</li>
+        <li>Include functionality for inserting new user data during signup and retrieving user data for authentication.</li>
+    </ul>
+
+    <h3>User Portal</h3>
+    <ul>
+        <li>Upon successful login, users should be redirected to their personalized portal.</li>
+        <li>The content of the portal is flexible and can be tailored to your interests. Examples include a dashboard displaying user data, a simple blog platform, a to-do list, or any other content you wish. However, the portal must be protected and only accessible to logged-in users.</li>
+    </ul>
+
+    <h3>Security Measures</h3>
+    <ul>
+        <li>Ensure that passwords are securely stored in the database (consider using hashing).</li>
+        <li>Optional: Implement necessary security measures to protect against common vulnerabilities such as SQL injection and Cross-Site Scripting (XSS).</li>
+    </ul>
+
+    <h3>Bonus Challenges</h3>
+    <ul>
+        <li>Implement password reset functionality.</li>
+        <li>Add the ability for users to update their profile information.</li>
+        <li>Implement an admin dashboard for user management (view, delete users).</li>
+    </ul>
+</div>
+
+{% endblock %}

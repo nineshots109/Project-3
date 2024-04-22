@@ -1,0 +1,18 @@
+<!-- templates/account/dashboard.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard</title>
+</head>
+<body>
+    <h1>Dashboard</h1>
+    <h2>Bookmarked Recipes</h2>
+    <ul>
+        {% for recipe in bookmarked_recipes %}
+            <li>{{ recipe.title }}</li>  <!-- Assuming 'title' is the attribute for the recipe's title -->
+        {% endfor %}
+    </ul>
+</body>
+</html>

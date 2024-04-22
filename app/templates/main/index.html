@@ -1,0 +1,41 @@
+{% extends 'layouts/base.html' %}
+{% block content %}
+
+<div class="container">
+    <h1>My Recipe Portal for CS120!</h1>
+    <p>Explore delicious recipes from our collection (RECIPES ARE FROM SPOONACULAR API :):</p>
+
+    <!-- Search Bar -->
+    <form action="{{ url_for('main.search_recipes') }}" method="GET">
+        <input type="text" name="query" placeholder="Search for recipes...">
+        <button type="submit">Search</button>
+    </form>
+
+    {% for recipe in recipes %}
+    <div class="recipe-card">
+        <img class="recipe-image" src="{{ recipe.image }}" alt="{{ recipe.title }}">
+        <div class="recipe-details">
+            <h2>{{ recipe.title }}</h2>
+            <p class="category">{{ recipe.dishTypes | join(', ') }}</p>
+            {{ recipe.summary | striptags }}
+            <p><strong>Preparation Time:</strong> {{ recipe.readyInMinutes }} minutes</p>
+            <p><strong>Servings:</strong> {{ recipe.servings }}</p>
+            {% if recipe.analyzedInstructions %}
+            <div class="steps">
+                <h3>Steps:</h3>
+                <ol>
+                    {% for step in recipe.analyzedInstructions[0].steps %}
+                    <li class="step">{{ step.step }}</li>
+                    {% endfor %}
+                </ol>
+            </div>
+            {% else %}
+            <p>No instructions available for this recipe.</p>
+            {% endif %}
+        </div>
+    </div>
+    {% endfor %}
+
+</div>
+
+{% endblock %}
